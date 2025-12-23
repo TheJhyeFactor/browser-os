@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, Search, Wifi, Volume2, Battery } from 'lucide-react';
+import { Menu, Search, Wifi, Volume2, Battery, Github, User } from 'lucide-react';
 import './Taskbar.css';
 
 const Taskbar = ({ windows, apps, onAppClick, onWindowClick, time }) => {
@@ -50,6 +50,22 @@ const Taskbar = ({ windows, apps, onAppClick, onWindowClick, time }) => {
                   <span>{app.name}</span>
                 </button>
               ))}
+            </div>
+            <div className="start-menu-footer">
+              <div className="start-menu-user">
+                <User size={16} />
+                <span>TheJhyeFactor</span>
+              </div>
+              <a
+                href="https://github.com/TheJhyeFactor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="start-menu-github"
+                onClick={() => setShowStartMenu(false)}
+              >
+                <Github size={16} />
+                <span>GitHub</span>
+              </a>
             </div>
           </div>
         )}

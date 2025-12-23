@@ -40,7 +40,7 @@
   position: absolute;
   bottom: 60px;
   left: 0;
-  width: 320px;
+  width: 340px;
   background: rgba(20, 20, 20, 0.95);
   backdrop-filter: blur(40px);
   border-radius: 12px;
@@ -83,6 +83,47 @@
 .start-menu-item:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
+}
+
+.start-menu-footer {
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 8px;
+}
+
+.start-menu-user {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.start-menu-github {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(88, 166, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  color: #58a6ff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.start-menu-github:hover {
+  background: rgba(88, 166, 255, 0.3);
+  transform: translateY(-1px);
 }
 
 .taskbar-center {
