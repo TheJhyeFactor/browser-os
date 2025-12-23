@@ -2,8 +2,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #1a1a1a;
-  color: #00ff00;
+  background: #0c0c0c;
+  color: #e0e0e0;
   font-family: 'Courier New', monospace;
   font-size: 14px;
   padding: 12px;
@@ -23,7 +23,7 @@
 }
 
 .terminal-line.input .prompt {
-  color: #00aaff;
+  color: #4ec9b0;
   font-weight: bold;
 }
 
@@ -33,15 +33,15 @@
 }
 
 .terminal-line.output {
-  color: #00ff00;
+  color: #cccccc;
 }
 
 .terminal-line.error {
-  color: #ff5555;
+  color: #f48771;
 }
 
 .prompt {
-  color: #00aaff;
+  color: #4ec9b0;
   font-weight: bold;
 }
 
@@ -68,7 +68,7 @@
   font-family: inherit;
   font-size: inherit;
   outline: none;
-  caret-color: #00ff00;
+  caret-color: #4ec9b0;
 }
 
 .terminal-output::-webkit-scrollbar {

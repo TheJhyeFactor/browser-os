@@ -11,8 +11,20 @@ const TerminalApp = () => {
 
   useEffect(() => {
     setHistory([
-      { type: 'output', content: 'WebOS Terminal v2025.1' },
-      { type: 'output', content: 'Type "help" for available commands' },
+      { type: 'output', content: '╔════════════════════════════════════════════════════════════╗' },
+      { type: 'output', content: '║           WebOS Terminal v2025.1 - TheJhyeFactor          ║' },
+      { type: 'output', content: '╚════════════════════════════════════════════════════════════╝' },
+      { type: 'output', content: '' },
+      { type: 'output', content: 'Welcome to WebOS! A browser-based operating system.' },
+      { type: 'output', content: 'Created by TheJhyeFactor - https://github.com/TheJhyeFactor' },
+      { type: 'output', content: '' },
+      { type: 'output', content: 'Quick start commands:' },
+      { type: 'output', content: '  • ls              - List files in current directory' },
+      { type: 'output', content: '  • cat welcome.txt - Read the welcome message' },
+      { type: 'output', content: '  • neofetch        - Display system information' },
+      { type: 'output', content: '  • help            - Show all available commands' },
+      { type: 'output', content: '' },
+      { type: 'output', content: 'Explore the Documents and Projects folders for more content!' },
       { type: 'output', content: '' }
     ]);
   }, []);
@@ -37,6 +49,8 @@ const TerminalApp = () => {
       '  clear           - Clear terminal',
       '  whoami          - Display current user',
       '  date            - Display current date/time',
+      '  neofetch        - Display system information',
+      '  about           - About WebOS',
       '  help            - Show this help message'
     ],
     ls: () => {
@@ -45,8 +59,43 @@ const TerminalApp = () => {
       return contents.length > 0 ? contents : ['Empty directory'];
     },
     pwd: () => [currentPath],
-    whoami: () => ['webos-user'],
+    whoami: () => ['TheJhyeFactor'],
     date: () => [new Date().toString()],
+    neofetch: () => [
+      '     ___           ___       ___     ',
+      '    /\\__\\         /\\  \\     /\\  \\    ',
+      '   /:/ _/_       /::\\  \\   /::\\  \\   ',
+      '  /:/ /\\__\\     /:/\\:\\__\\ /:/\\:\\__\\  ',
+      '  \\:\\ \\/__/    /:/ /:/  //:/  \\/__/  ',
+      '   \\:\\__\\     /:/_/:/  //:/  /       ',
+      '    \\/__/     \\:\\/:/  / \\/__/        ',
+      '               \\::/  /                ',
+      '                \\/__/                 ',
+      '',
+      'OS: WebOS v2025.1.0',
+      'Kernel: Browser Kernel',
+      'Shell: WebShell',
+      'Terminal: WebTerminal',
+      'User: TheJhyeFactor',
+      'Uptime: ' + Math.floor(performance.now() / 1000) + ' seconds',
+      'Platform: ' + navigator.platform,
+      'Browser: ' + navigator.userAgent.split(' ').pop(),
+      '',
+      'GitHub: https://github.com/TheJhyeFactor/browser-os'
+    ],
+    about: () => [
+      'WebOS - Browser Operating System',
+      'Version: 2025.1.0',
+      '',
+      'Created by: TheJhyeFactor',
+      'GitHub: https://github.com/TheJhyeFactor',
+      'Repository: https://github.com/TheJhyeFactor/browser-os',
+      '',
+      'A fully functional operating system running in your browser!',
+      'Built with React, powered by localStorage.',
+      '',
+      'Type "help" for available commands.'
+    ],
     clear: () => {
       setHistory([]);
       return null;
