@@ -100,6 +100,8 @@ const Desktop = () => {
 
   return (
     <div className="desktop">
+      <div className="desktop-watermark">TheJhyeFactor</div>
+
       <div className="desktop-icons">
         {desktopIcons.map(icon => (
           <div
