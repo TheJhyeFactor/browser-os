@@ -66,6 +66,37 @@ const Desktop = () => {
     ));
   };
 
+  const maximizeWindow = (id) => {
+    setWindows(windows.map(w => {
+      if (w.id === id) {
+        if (w.maximized) {
+          return {
+            ...w,
+            maximized: false,
+            x: w.previousX,
+            y: w.previousY,
+            width: w.previousWidth,
+            height: w.previousHeight
+          };
+        } else {
+          return {
+            ...w,
+            maximized: true,
+            previousX: w.x,
+            previousY: w.y,
+            previousWidth: w.width,
+            previousHeight: w.height,
+            x: 0,
+            y: 0,
+            width: window.innerWidth,
+            height: window.innerHeight - 48
+          };
+        }
+      }
+      return w;
+    }));
+  };
+
   const restoreWindow = (id) => {
     setWindows(windows.map(w =>
       w.id === id ? { ...w, minimized: false, zIndex: nextZIndex } : w
@@ -95,7 +126,8 @@ const Desktop = () => {
   const desktopIcons = [
     { id: 'terminal', name: 'Terminal', icon: Terminal },
     { id: 'files', name: 'Files', icon: Folder },
-    { id: 'editor', name: 'Editor', icon: FileText }
+    { id: 'editor', name: 'Editor', icon: FileText },
+    { id: 'calculator', name: 'Calculator', icon: Calculator }
   ];
 
   return (
@@ -125,8 +157,10 @@ const Desktop = () => {
           width={window.width}
           height={window.height}
           zIndex={window.zIndex}
+          maximized={window.maximized}
           onClose={() => closeWindow(window.id)}
           onMinimize={() => minimizeWindow(window.id)}
+          onMaximize={() => maximizeWindow(window.id)}
           onFocus={() => bringToFront(window.id)}
           onMove={updateWindowPosition}
           onResize={updateWindowSize}
