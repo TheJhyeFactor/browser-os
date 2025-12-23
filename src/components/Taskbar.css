@@ -1,0 +1,149 @@
+.taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.taskbar-start {
+  position: relative;
+}
+
+.start-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.start-btn:hover,
+.start-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.start-menu {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 320px;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(40px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.start-menu-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.start-menu-header h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.start-menu-apps {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.start-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.start-menu-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.taskbar-center {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.taskbar-center::-webkit-scrollbar {
+  display: none;
+}
+
+.taskbar-window {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.taskbar-window:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.taskbar-window.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.taskbar-end {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.system-tray {
+  display: flex;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.clock-time {
+  font-weight: 600;
+}
+
+.clock-date {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
