@@ -65,9 +65,20 @@
 
 .clear-btn {
   background: #f44336 !important;
-  grid-column: span 3;
 }
 
 .clear-btn:hover {
   background: #ef5350 !important;
+}
+
+.zero-btn {
+  grid-column: span 1;
+}
+
+.equals-btn {
+  background: #4caf50 !important;
+}
+
+.equals-btn:hover {
+  background: #66bb6a !important;
 }

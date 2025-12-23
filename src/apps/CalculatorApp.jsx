@@ -68,13 +68,6 @@ const CalculatorApp = () => {
     }
   };
 
-  const buttons = [
-    ['7', '8', '9', '÷'],
-    ['4', '5', '6', '×'],
-    ['1', '2', '3', '-'],
-    ['0', '.', '=', '+']
-  ];
-
   return (
     <div className="calculator">
       <div className="calculator-display">{display}</div>
@@ -82,20 +75,22 @@ const CalculatorApp = () => {
         <button onClick={handleClear} className="calc-btn clear-btn">
           C
         </button>
-        {buttons.flat().map((btn, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              if (btn === '=') handleEquals();
-              else if (['+', '-', '×', '÷'].includes(btn)) handleOperator(btn);
-              else if (btn === '.') handleDecimal();
-              else handleNumber(btn);
-            }}
-            className={`calc-btn ${['+', '-', '×', '÷', '='].includes(btn) ? 'operator-btn' : ''}`}
-          >
-            {btn}
-          </button>
-        ))}
+        <button onClick={handleNumber.bind(null, 7)} className="calc-btn">7</button>
+        <button onClick={handleNumber.bind(null, 8)} className="calc-btn">8</button>
+        <button onClick={handleNumber.bind(null, 9)} className="calc-btn">9</button>
+        <button onClick={() => handleOperator('÷')} className="calc-btn operator-btn">÷</button>
+        <button onClick={handleNumber.bind(null, 4)} className="calc-btn">4</button>
+        <button onClick={handleNumber.bind(null, 5)} className="calc-btn">5</button>
+        <button onClick={handleNumber.bind(null, 6)} className="calc-btn">6</button>
+        <button onClick={() => handleOperator('×')} className="calc-btn operator-btn">×</button>
+        <button onClick={handleNumber.bind(null, 1)} className="calc-btn">1</button>
+        <button onClick={handleNumber.bind(null, 2)} className="calc-btn">2</button>
+        <button onClick={handleNumber.bind(null, 3)} className="calc-btn">3</button>
+        <button onClick={() => handleOperator('-')} className="calc-btn operator-btn">-</button>
+        <button onClick={handleNumber.bind(null, 0)} className="calc-btn zero-btn">0</button>
+        <button onClick={handleDecimal} className="calc-btn">.</button>
+        <button onClick={handleEquals} className="calc-btn equals-btn">=</button>
+        <button onClick={() => handleOperator('+')} className="calc-btn operator-btn">+</button>
       </div>
     </div>
   );

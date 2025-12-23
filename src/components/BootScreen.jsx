@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Globe } from 'lucide-react';
 import './BootScreen.css';
 
 const BootScreen = () => {
@@ -26,7 +27,9 @@ const BootScreen = () => {
     <div className="boot-screen">
       <div className="boot-content">
         <div className="boot-logo">
-          <div className="logo-icon">🌐</div>
+          <div className="logo-icon">
+            <Globe size={96} />
+          </div>
           <h1>WebOS</h1>
           <p>Browser Operating System v2025.1</p>
         </div>

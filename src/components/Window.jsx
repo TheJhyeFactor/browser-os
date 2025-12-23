@@ -60,10 +60,22 @@ const Window = ({ id, title, x, y, width, height, zIndex, onClose, onMinimize, o
       <div className="window-titlebar" onMouseDown={handleMouseDown}>
         <span className="window-title">{title}</span>
         <div className="window-controls">
-          <button onClick={onMinimize} className="window-btn minimize-btn">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onMinimize();
+            }}
+            className="window-btn minimize-btn"
+          >
             <Minimize size={14} />
           </button>
-          <button onClick={onClose} className="window-btn close-btn">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+            className="window-btn close-btn"
+          >
             <X size={14} />
           </button>
         </div>

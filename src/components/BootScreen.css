@@ -20,8 +20,10 @@
 }
 
 .logo-icon {
-  font-size: 6rem;
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
+  color: #00ff00;
 }
 
 .boot-logo h1 {
