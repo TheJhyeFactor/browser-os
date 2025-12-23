@@ -1,8 +1,8 @@
 .window {
   position: absolute;
   background: white;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -11,59 +11,141 @@
 }
 
 .window-titlebar {
-  background: linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%);
-  padding: 8px 12px;
+  background: linear-gradient(180deg, #f6f6f6 0%, #ececec 100%);
+  padding: 10px 12px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   cursor: move;
   user-select: none;
-  border-bottom: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d1d1d1;
+  gap: 12px;
 }
 
 .window-title {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #333;
+  text-align: center;
+  flex: 1;
 }
 
 .window-controls {
   display: flex;
-  gap: 6px;
+  gap: 8px;
+  position: relative;
+  z-index: 10;
 }
 
 .window-btn {
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  transition: all 0.2s;
-  background: transparent;
-}
-
-.window-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.minimize-btn {
-  color: #666;
+  transition: all 0.15s;
+  position: relative;
+  padding: 0;
 }
 
 .close-btn {
-  color: #666;
+  background: #ff5f57;
+  border: 0.5px solid #e0443e;
 }
 
 .close-btn:hover {
-  background: #ff5f56;
-  color: white;
+  background: #ff4136;
+}
+
+.minimize-btn {
+  background: #ffbd2e;
+  border: 0.5px solid #dea123;
+}
+
+.minimize-btn:hover {
+  background: #ffaa00;
+}
+
+.maximize-btn {
+  background: #28ca42;
+  border: 0.5px solid #26a63a;
+}
+
+.maximize-btn:hover {
+  background: #20c038;
 }
 
 .window-content {
   flex: 1;
   overflow: auto;
   background: white;
+}
+
+/* Resize handles */
+.resize-handle {
+  position: absolute;
+  z-index: 10;
+}
+
+.resize-n {
+  top: 0;
+  left: 10px;
+  right: 10px;
+  height: 5px;
+  cursor: ns-resize;
+}
+
+.resize-s {
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 5px;
+  cursor: ns-resize;
+}
+
+.resize-e {
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
+  cursor: ew-resize;
+}
+
+.resize-w {
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
+  cursor: ew-resize;
+}
+
+.resize-ne {
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nesw-resize;
+}
+
+.resize-nw {
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+
+.resize-se {
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+
+.resize-sw {
+  bottom: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  cursor: nesw-resize;
 }
